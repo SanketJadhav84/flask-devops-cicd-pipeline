@@ -1,6 +1,0 @@
-services:
-  myapp:
-    build: .
-    container_name: myappcontainer
-    ports:
-      - "5000:5000"
