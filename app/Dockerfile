@@ -1,16 +1,16 @@
-# ---------- Stage 1: Builder ----------
+
 FROM python:3.11-slim AS builder
 
 WORKDIR /app
 
-# Copy only requirements first (for caching)
+
 COPY requirements.txt .
 
-# Install dependencies into a custom folder
+# install dependencies
 RUN pip install --no-cache-dir --prefix=/install -r requirements.txt
 
 
-# ---------- Stage 2: Final ----------
+#stage2
 FROM python:3.11-slim
 
 WORKDIR /app
